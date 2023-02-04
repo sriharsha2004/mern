@@ -3,7 +3,7 @@ var app = express();
 const router = express.Router();
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://nms:nmspassword@cluster.eiu197s.mongodb.net/?retryWrites=true&w=majority/data', function(err){
+mongoose.connect(process.env.MONGO_URL, function(err){
     if(err){
         console.log(err);
     }else{
